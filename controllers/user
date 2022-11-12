@@ -1,0 +1,14 @@
+const getAllUsers = (req, res, next) => {
+  try{
+    throw new Error("Failed fetch All users");
+    res.send("ok")
+  } catch (e){
+    req.ApiHasError = true
+    req.ApiError = "Failed to fetch all users"
+    next()
+  }
+}
+
+module.exports = {
+  getAllUsers
+}
